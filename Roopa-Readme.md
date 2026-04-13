@@ -14,7 +14,8 @@ It’s mainly adopted in modern DevSecOps workflows for design-time security, no
 
 git
 ----
-securing git repo's
+securing git repo's, by following below steps:
+- .gitignore 
 
 
 
