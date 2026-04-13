@@ -15,7 +15,8 @@ It’s mainly adopted in modern DevSecOps workflows for design-time security, no
 git
 ----
 securing git repo's, by following below steps:
-- .gitignore 
+- .gitignore - git will not track files that are in .gitignore file.
+- 
 
 
 
