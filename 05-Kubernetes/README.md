@@ -222,7 +222,7 @@ NetworkPolicy allows:
 
 ## Important Note (kind)
 
-kind supports NetworkPolicy **only if a CNI like Calico is installed**.
+kind supports NetworkPolicy **only if a CNI like Calico (k8s network interface help setup network policies) is installed**.
 
 We will install Calico.
 
@@ -308,7 +308,7 @@ kind: NetworkPolicy
 metadata:
   name: allow-specific-traffic
   namespace: payments
-spec:
+spec: // this policy is only applied to backend service i.e my-app and should accept traffic only from frontend service pod.
   podSelector:
     matchLabels:
       app: my-app
@@ -556,6 +556,10 @@ Git stays clean. Secrets stay safe.
 helm repo add external-secrets https://charts.external-secrets.io
 helm repo update
 ```
+
+'''
+helm install external-secrets external-secrets/external-secrets \ -n external-secrets \ --create-namespace
+'''
 
 Verify:
 
